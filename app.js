@@ -36,7 +36,7 @@ if ('development' === app.get('env')) {
   app.use(express.errorHandler());
 }
 
-<<<<<<< HEAD
+
 app.get('/', routes.index);
 
 app.get('/tasks', function(req, res){
@@ -53,20 +53,8 @@ app.get('/tasks/new', function(req, res) {
 		title: 'New Task'
 	});
 });
-=======
-mongoose.connect('mongodb://localhost/todo_development')
-var Schema = mongoose.Schema;
-var ObjectId = Schema.ObjectId;
 
-var Task = new Schema({
-	task: String
-});
 
-var Task = mongoose.model('Task', Task);
-
-app.get('/', routes.index);
-app.get('/users', user.list);
->>>>>>> e237f7d45f02222cb8f5f8a120606fd74bd5a192
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
