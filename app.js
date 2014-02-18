@@ -29,13 +29,15 @@ if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
-mongoose.connect('mongodb://localhost/todo_development', function(err){
-	if(!err) {
-		console.log('connected to MongoDB!!!!');
-	} else {
-		throw err;
-	}
+mongoose.connect('mongodb://localhost/todo_development')
+var Schema = mongoose.Schema;
+var ObjectId = Schema.ObjectId;
+
+var Task = new Schema({
+	task: String
 });
+
+var Task = mongoose.model('Task', Task);
 
 app.get('/', routes.index);
 app.get('/users', user.list);
